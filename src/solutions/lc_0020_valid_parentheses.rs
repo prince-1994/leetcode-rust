@@ -1,4 +1,4 @@
-fn is_valid(s: String) -> bool {
+pub fn is_valid(s: String) -> bool {
     let mut stack = Vec::new();
     for c in s.chars() {
         match c {
@@ -12,7 +12,14 @@ fn is_valid(s: String) -> bool {
     return stack.is_empty();
 }
 
-fn main() {
-    println!("{}", is_valid("()[]{}".to_string()));
-    println!("{}", is_valid("(]".to_string()));
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+
+    fn test() {
+        assert_eq!(is_valid("()[]{}".to_string()), true);
+        assert_eq!(is_valid("(]".to_string()), false);
+    }
 }

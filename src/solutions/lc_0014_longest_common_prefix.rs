@@ -1,6 +1,6 @@
 use std::cmp::min;
 
-fn longest_common_prefix(strs: Vec<String>) -> String {
+pub fn longest_common_prefix(strs: Vec<String>) -> String {
     fn common_prefix(s1: &str, s2: &str) -> String {
         let mut result = String::new();
         let mut i = 0;
@@ -22,11 +22,21 @@ fn longest_common_prefix(strs: Vec<String>) -> String {
         .reduce(|s1, s2| common_prefix(&s1, &s2))
         .unwrap();
 }
-fn main() {
-    let strs = vec![
-        "flower".to_string(),
-        "flow".to_string(),
-        "flight".to_string(),
-    ];
-    println!("{}", longest_common_prefix(strs));
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test() {
+        let strs = vec![
+            "flower".to_string(),
+            "flow".to_string(),
+            "flight".to_string(),
+        ];
+        assert_eq!(longest_common_prefix(strs), "fl".to_string());
+
+        let strs = vec!["dog".to_string(), "racecar".to_string(), "car".to_string()];
+        assert_eq!(longest_common_prefix(strs), "".to_string());
+    }
 }

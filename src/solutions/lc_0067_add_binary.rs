@@ -1,6 +1,6 @@
 use std::cmp::max;
 
-fn add_binary(a: String, b: String) -> String {
+pub fn add_binary(a: String, b: String) -> String {
     let mut result = String::new();
     let mut carry = 0;
     let n = max(a.len(), b.len());
@@ -20,7 +20,15 @@ fn add_binary(a: String, b: String) -> String {
     return result.chars().rev().collect::<String>();
 }
 
-fn main() {
-    println!("{}", add_binary("11".to_string(), "1".to_string()));
-    println!("{}", add_binary("1010".to_string(), "1011".to_string()));
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+
+    fn main() {
+        assert_eq!(add_binary("11".to_string(), "1".to_string()), "100");
+        assert_eq!(add_binary("1010".to_string(), "1011".to_string()), "10101");
+        assert_eq!(add_binary("1010".to_string(), "1011".to_string()), "10101");
+    }
 }

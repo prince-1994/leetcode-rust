@@ -1,6 +1,6 @@
 use std::collections::HashMap;
 
-fn roman_to_int(s: &str) -> i32 {
+pub fn roman_to_int(s: &str) -> i32 {
     let char_to_int: HashMap<char, i32> = HashMap::from([
         ('I', 1),
         ('V', 5),
@@ -25,10 +25,16 @@ fn roman_to_int(s: &str) -> i32 {
     }
     return result;
 }
-fn main() {
-    println!("{}", roman_to_int("III")); // Output: 3
-    println!("{}", roman_to_int("IV")); // Output: 4
-    println!("{}", roman_to_int("IX")); // Output: 9
-    println!("{}", roman_to_int("LVIII")); // Output: 58
-    println!("{}", roman_to_int("MCMXCIV")); // Output: 1994
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test() {
+        assert_eq!(roman_to_int("III"), 3);
+        assert_eq!(roman_to_int("IV"), 4);
+        assert_eq!(roman_to_int("IX"), 9);
+        assert_eq!(roman_to_int("LVIII"), 58);
+        assert_eq!(roman_to_int("MCMXCIV"), 1994);
+    }
 }

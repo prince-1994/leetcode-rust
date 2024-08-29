@@ -1,4 +1,4 @@
-fn my_sqrt(x: i32) -> i32 {
+pub fn my_sqrt(x: i32) -> i32 {
     let (mut l, mut r) = (0, x);
     while l <= r {
         let mid = l + (r - l) / 2;
@@ -14,8 +14,15 @@ fn my_sqrt(x: i32) -> i32 {
     return r;
 }
 
-fn main() {
-    println!("{}", my_sqrt(5));
-    println!("{}", my_sqrt(8));
-    println!("{}", my_sqrt(9));
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+
+    fn main() {
+        assert_eq!(my_sqrt(5), 2);
+        assert_eq!(my_sqrt(8), 2);
+        assert_eq!(my_sqrt(9), 3);
+    }
 }

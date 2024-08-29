@@ -1,4 +1,4 @@
-fn is_palindrome(num: i32) -> bool {
+pub fn is_palindrome(num: i32) -> bool {
     if num < 0 {
         return false;
     }
@@ -12,7 +12,13 @@ fn is_palindrome(num: i32) -> bool {
     return result == num;
 }
 
-fn main() {
-    println!("{}", is_palindrome(32));
-    println!("{}", is_palindrome(33));
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn test() {
+        assert_eq!(is_palindrome(32), false);
+        assert_eq!(is_palindrome(33), true);
+    }
 }
