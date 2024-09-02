@@ -1,6 +1,7 @@
 pub mod lc_0001_two_sum;
 pub mod lc_0003_longest_substring_without_repeating_characters;
 pub mod lc_0009_palindrome_numbers;
+pub mod lc_0011_container_with_most_water;
 pub mod lc_0013_roman_to_integer;
 pub mod lc_0014_longest_common_prefix;
 pub mod lc_0020_valid_parentheses;
@@ -26,7 +27,8 @@ pub mod lc_0202_happy_number;
 pub mod lc_0205_isomorphic_strings;
 pub mod lc_0217_contains_duplicate;
 pub mod lc_0219_contains_duplicate_ii;
+pub mod lc_0739_daily_temperatures;
 pub mod lc_1071_greatest_common_divisor_of_strings;
 pub mod lc_1431_kids_with_the_greatest_number_of_candies;
-pub mod lc_1768_merge_strings;
+pub mod lc_1768_merge_strings_alternately;
 pub mod lc_2390_removing_stars_from_a_string;

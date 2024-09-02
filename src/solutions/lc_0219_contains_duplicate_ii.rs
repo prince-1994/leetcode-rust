@@ -3,6 +3,7 @@ use std::collections::HashMap;
 pub fn contains_nearby_duplicate(nums: Vec<i32>, k: usize) -> bool {
     let n = nums.len();
     let mut map: HashMap<i32, usize> = HashMap::new();
+    
     for i in 0..n {
         let num = nums[i];
         if let Some(index) = map.get(&num) {
